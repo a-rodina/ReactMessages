@@ -1,0 +1,15 @@
+.card-container {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #000000;
+    margin-bottom: 10px;
+}
+
+.card-container__item {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.card-container__item span {
+    font-weight: 600;
+}

@@ -1,0 +1,7 @@
+.userList {
+    width: 30%;
+}
+
+.userList__item {
+    cursor: pointer;
+}
