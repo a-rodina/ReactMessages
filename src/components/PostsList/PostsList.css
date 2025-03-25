@@ -1,0 +1,12 @@
+.postsList {
+    width: 70%;
+    margin-left: 15px;
+}
+
+.postsList__item {
+    margin-bottom: 10px;
+}
+
+.postsList__item:last-child {
+    margin-bottom: 0;
+}

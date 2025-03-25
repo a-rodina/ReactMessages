@@ -4,4 +4,9 @@
 
 .userList__item {
     cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.userList__item:last-child {
+    margin-bottom: 0;
 }

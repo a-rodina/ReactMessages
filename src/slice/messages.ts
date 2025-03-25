@@ -17,10 +17,28 @@ export const getUsers = createAsyncThunk(
     }
 )
 
+export const getPosts = createAsyncThunk(
+    "message/getPosts",
+    async function (_, {rejectWithValue}) {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+            if(!response.ok) {
+                throw new Error("Не удалось загрузить данные")
+            }
+            const data = await response.json();
+            return data;
+        }
+        catch (error) {
+            return rejectWithValue((error as Error).message)
+        }
+    }
+)
+
 const messageSlice = createSlice({
     name: 'message',
     initialState: {
         users: [],
+        posts: []
     },
     reducers: {
     },
@@ -35,6 +53,19 @@ const messageSlice = createSlice({
             state.users = payload;
         }),
         builder.addCase(getUsers.rejected, (state: any, {payload}: {payload :any}) => {
+            state.status = 'rejected';
+            state.error = payload;
+        }),
+        builder.addCase(getPosts.pending, (state: any) => {
+            state.status = 'loading';
+            state.error = null;
+        }),
+        builder.addCase(getPosts.fulfilled, (state: any, {payload}: {payload :any}) => {
+            state.status = 'resolved';
+            state.error = null;
+            state.posts = payload;
+        }),
+        builder.addCase(getPosts.rejected, (state: any, {payload}: {payload :any}) => {
             state.status = 'rejected';
             state.error = payload;
         })
