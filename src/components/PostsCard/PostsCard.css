@@ -1,6 +1,5 @@
 .postCard-container {
     width: 100%;
-    border: 1px solid #000000;
     padding: 10px;
 }
 
@@ -14,6 +13,16 @@
 .postCard-container__body {
     font-size: 15px;
     font-weight: 400;
-    margin-bottom: 5px;
-
+    margin-bottom: 10px;
 }
+
+.postCard-container__btn {
+    cursor: pointer;
+    padding: 7px;
+    border: none;
+    background-color: #bfbcbc;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 400;
+}
+

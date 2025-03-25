@@ -20,12 +20,15 @@ function MainPage() {
     };
 
     return (<>
-        <div className='container'>
-            <div className='mainBlock'>
-                <UsersList users={data.users} handleShowPosts={handleShowPosts} currentUserId={data.currentUserId}/>
-                {data.filteredPosts.length > 0 ? <PostsList posts={data.filteredPosts}/> : null}
+        <section className='mainPage'>
+            <div className='container'>
+                <div className='mainBlock'>
+                    <UsersList users={data.users} handleShowPosts={handleShowPosts} currentUserId={data.currentUserId}/>
+                    {data.filteredPosts.length > 0 ? <PostsList posts={data.filteredPosts}/> :
+                        <div className='mainPage__description'><p>Select a user</p></div>}
+                </div>
             </div>
-        </div>
+        </section>
     </>);
 }
 

@@ -1,10 +1,17 @@
 .postsList {
     width: 70%;
-    margin-left: 15px;
+    height: 100%;
+    overflow-y: auto;
 }
 
 .postsList__item {
     margin-bottom: 10px;
+    box-shadow: 5px 3px 5px 0 rgba(16, 14, 45, 0.08);
+    transition: 0.3s;
+}
+
+.postsList__item:hover {
+    background-color: #f6f5f5;
 }
 
 .postsList__item:last-child {

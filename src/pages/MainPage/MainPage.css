@@ -1,4 +1,20 @@
+.mainPage {
+    padding: 35px 0;
+    background-color: #ffffff;
+}
+
 .mainBlock {
     width: 100%;
     display: flex;
+    height: 870px;
+    box-shadow: 10px 5px 10px 0 rgba(16, 14, 45, 0.08);
+}
+
+.mainPage__description {
+    margin: 30px auto;
+}
+
+.mainPage__description p {
+    font-size: 20px;
+    font-weight: 500;
 }
