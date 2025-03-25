@@ -2,7 +2,7 @@ import './MainPage.css';
 import UsersList from "../../components/UsersList/UsersList";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
-import {getPosts, getUsers} from "../../slice/messages";
+import {filterPostsByUserId, getPosts, getUsers} from "../../slice/messages";
 import PostsList from "../../components/PostsList/PostsList";
 
 
@@ -15,12 +15,15 @@ function MainPage() {
         dispatch(getPosts())
     }, [])
 
+    const handleShowPosts = (userId: number) => {
+        dispatch(filterPostsByUserId(userId));
+    };
 
     return (<>
         <div className='container'>
             <div className='mainBlock'>
-                <UsersList users={data.users}/>
-                <PostsList posts={data.posts}/>
+                <UsersList users={data.users} handleShowPosts={handleShowPosts} currentUserId={data.currentUserId}/>
+                {data.filteredPosts.length > 0 ? <PostsList posts={data.filteredPosts}/> : null}
             </div>
         </div>
     </>);

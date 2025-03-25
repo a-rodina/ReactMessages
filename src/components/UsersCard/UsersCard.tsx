@@ -1,8 +1,8 @@
 import './UsersCard.css';
 import {IUser} from "../../types";
 
-
 function UsersCard({user}: {user: IUser}) {
+
     return (<>
         <div className='userCard-container'>
             <p className='card-container__item'><span>Name</span>: {user.name}</p>

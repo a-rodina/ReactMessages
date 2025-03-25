@@ -31,5 +31,18 @@ export  interface IPost {
     body: string
 }
 
+export  interface IComment {
+    postId: number,
+    id: number,
+    name: string,
+    email: string,
+    body: string
+}
+
+export  interface IUserList {
+    users: IUser[],
+    handleShowPosts: (id: number) => void,
+    currentUserId: number | null;
+}
 
 
